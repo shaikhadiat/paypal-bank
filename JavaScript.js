@@ -24,12 +24,16 @@ updateSpanTaxt('currentBalance', depositNumber);
 
   const withdrawButton = document.getElementById('addWithdraw');
   withdrawButton.addEventListener('click', function(){
-  const withdrawNumber = getInputNumber('withdrawAmount');
-    console.log(withdrawNumber);
+  const withdrawNumber = getInputNumber("withdrawAmount");
+
+    updateSpanTaxt("currentWithdraw", withdrawNumber);
+    updateSpanTaxt("currentBalance", -1* 
+     withdrawNumber);
+    document.getElementById("withdrawAmount").value = "";
   })
 
   function getInputNumber(id){
-    const Amount = document.getElementById(id).value;
+    const withdrawAmount = document.getElementById(id).value;
     const amountNumber = parseFloat(withdrawAmount);
     return amountNumber;
   }
